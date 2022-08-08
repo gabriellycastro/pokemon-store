@@ -1,0 +1,319 @@
+@import url('//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon');
+
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: "Pokemon";
+
+$maximum-yellow: #F9BC38ff;
+$radical-red: #FC3268ff;
+$purple-navy: #3E436Dff;
+$space-cadet: #27273Dff;
+$lavender-web: #EDE6F5ff;
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $lavender-web;
+    font-family: $primary-font;
+
+    .pokemon-font-style {
+        font-family: "Pokemon";
+        color: $maximum-yellow;
+        letter-spacing: 5px;
+        -webkit-text-stroke: 1px $space-cadet;
+        text-shadow: 0 0 2px $space-cadet;
+    }
+
+    h1 {
+        font-family: $secondary-font;
+        font-size: 30px;
+        letter-spacing: 3px;
+        text-align: center;
+        color: $radical-red;
+
+        i {
+            font-size: 38px;
+        }
+    }
+
+    .header {
+        background-color: $space-cadet;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 100px;
+        padding: 1% 3%;
+        position: relative;
+
+        @media screen and (max-width: 560px) {
+            padding: 3%;
+        }
+
+        .icon {
+            height: auto;
+            object-fit: contain;
+
+            &-logo {
+                width: 50px;
+            }
+
+            &-search {
+                width: 30px;
+            }
+
+            &-minicart {
+                width: 45px;
+                cursor: pointer;
+                margin-bottom: -7px;
+            }
+
+            &-close {
+                width: 25px;
+                cursor: pointer;
+            }
+        }
+
+        .search-bar {
+            box-sizing: content-box;
+            min-width: 300px;
+            width: 50%;
+            height: 50px;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $purple-navy;
+            border-radius: 15px;
+
+            @media screen and (max-width: 560px) {
+                min-width: 280px;
+                width: 100%;
+                order: 1;
+                margin-top: 3%;
+            }
+
+            input {
+                width: 85%;
+                min-height: 40px;
+                border: none;
+                border-radius: 10px;
+                padding: 0 10px;
+                background-color: $space-cadet;
+                color: $lavender-web;
+                font-weight: bold;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            button {
+                background: transparent;
+                border: none;
+                padding: 0;
+                margin-left: 10px;
+            }
+        }
+
+        .minicart-container {
+            position: relative;
+
+            .quantity-minicart {
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $radical-red;
+                color: $lavender-web;
+                font-size: 14px;
+                font-weight: bold;
+            }
+        }
+
+        .minicart {
+            visibility: hidden;
+            position: absolute;
+            background-color: $space-cadet;
+            height: 100vh;
+
+            &.active {
+                visibility: visible;
+                top: 0;
+                right: 0;
+                width: 270px;
+                z-index: 1;
+            }
+
+            &__header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                background-color: $purple-navy;
+                color: $lavender-web;
+            }
+
+            &__close {
+                border: none;
+                background-color: transparent;
+            }
+
+            &__footer {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                padding: 20px 0;
+            }
+
+            &__finish {
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+                background-color: $radical-red;
+                display: block;
+                margin: 0 auto;
+                width: 90%;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .footer {
+        background-color: $maximum-yellow;
+        padding: 10px;
+        color: $lavender-web;
+        text-align: center;
+        letter-spacing: 3px;
+        border-radius: 10px 10px 0 0;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    .banner {
+        img {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    .home {
+        color: $space-cadet;
+
+        .pokemons-container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 26px 0;
+
+            .pokemon {
+                width: 20%;
+                border: solid 3px $purple-navy;
+                border-radius: 20px;
+                margin: 10px 5px;
+                padding: 10px;
+                list-style: none;
+                background-color: $lavender-web;
+                box-shadow: -1px 4px 9px rgb(0 0 0 / 25%);
+                position: relative;
+
+                @media screen and (max-width: 768px) {
+                    width: 40%;
+                }
+
+                @media screen and (max-width: 425px) {
+                    width: 80%;
+                }
+
+                &:hover {
+                    bottom: 3px;
+                    left: 3px;
+                }
+
+                &__image {
+                    margin: 0 auto;
+
+                    &.front {
+                        display: block;
+                    }
+
+                    &.back {
+                        display: none;
+                    }
+                }
+
+                &__name {
+                    font-size: 16px;
+                    font-weight: bold;
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: $lavender-web;
+                    background-color: $maximum-yellow;
+                    border-radius: 15px;
+                    padding: 5px;
+                }
+
+                &__info {
+                    font-weight: bold;
+                    color: $space-cadet;
+
+                    p {
+                        display: flex;
+                        justify-content: space-between;
+
+                        span {
+                            text-align: center;
+                            width: 50%;
+                        }
+                    }
+
+                    &--name {
+
+                    }
+
+                    &--value {
+                        text-transform: uppercase;
+                        color: $maximum-yellow;
+                        font-weight: bold;
+                    }
+                }
+
+                &__buy {
+                    cursor: pointer;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: $radical-red;
+                    display: block;
+                    margin: 0 auto;
+                    padding: 0 20px;
+                    width: 100%;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .load-more {
+            cursor: pointer;
+            display: block;
+            margin: 30px auto;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            width: 300px;
+            background: $purple-navy;
+            color: $lavender-web;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+
+    .product {
+        
+    }
+}
